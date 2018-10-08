@@ -1,0 +1,89 @@
+mixin preview(html)
+  .preview!= html
+  code
+    pre= html
+
+mixin example(code)
+  .example
+    - if (code && code.description)
+      p= code.description
+      - if (code && code.code) { var codes = code.code }
+        each code in codes
+          +preview(code.html)
+    - else
+      +preview(code.html)
+
+mixin examples(examples)
+  - if (examples && examples !== {})
+    .container
+      each code, type in examples
+        - if (type !== 'default')
+          .row
+            h5= type
+        .row
+          +example(code)
+
+mixin modifiers(modifiers)
+  - if (modifiers && modifiers !== {})
+    h4 Modifiers
+    .modifiers
+      table
+        thead
+        tbody
+          each mods, family in modifiers
+            tr
+              th= family
+              td
+                each mod in mods
+                  mark.tag= mod
+
+mixin parents(parents)
+  - if (parents && parents.length)
+    .parents
+      h4 Parents
+      table
+        thead
+        tbody
+          tr
+            each parent in parents
+              tr
+                td
+                  code= parent
+
+mixin render(elem)
+  p= elem.desc
+  +example(elem.examples.default)
+  +modifiers(elem.modifiers)
+  - delete elem.examples.default
+  +examples(elem.examples)
+  +parents(elem.parents)
+
+doctype html
+html(lang= language)
+  meta(charset = 'utf-8')
+  meta(name = 'viewport', content = 'width=device-width, initial-scale=1')
+  title= name
+  link(rel = 'stylesheet', href = stylesheet)
+  style.
+    * { scroll-behavior: smooth; }
+    pre { tab-size: 2; }
+
+  header
+    a.logo(href)= name
+    each category in categories
+      a.button(href = '#' + category.name.toLowerCase())= category.name
+    a.button(href = homepage, target = '_blank')
+      span.icon-link
+      span documentation
+
+  main
+    h1= name
+    p= description
+
+    each category in categories
+      section(id = category.name.toLowerCase())
+        h2= category.name
+
+        each elem in category.elements
+          h3= elem.name
+          +render(elem)

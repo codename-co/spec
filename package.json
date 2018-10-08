@@ -1,0 +1,46 @@
+{
+  "name": "@codename/spec",
+  "version": "0.1.0",
+  "description": "Describe, document & validate your CSS framework with the spec toolkit.",
+  "keywords": [
+    "css",
+    "framework",
+    "spec",
+    "design system"
+  ],
+  "author": "Arnaud Leymet <arnaud@codename.co>",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codename-co/spec.git"
+  },
+  "files": [
+    "bin",
+    "examples",
+    "lib",
+    "templates",
+    "test"
+  ],
+  "bin": {
+    "spec": "bin/spec"
+  },
+  "scripts": {
+    "postinstall": "yarn link"
+  },
+  "dependencies": {
+    "@emmetio/expand-abbreviation": "^0.7.1",
+    "@emmetio/html-transform": "^0.3.10",
+    "eminent": "^0.0.8",
+    "enojs": "^0.16.1",
+    "loglevel": "^1.6.1",
+    "mkdirp": "^0.5.1",
+    "pug": "^2.0.3"
+  },
+  "devDependencies": {
+    "commander": "^2.18.0"
+  },
+  "engines": {
+    "node": ">=8"
+  }
+}

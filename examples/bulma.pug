@@ -1,0 +1,128 @@
+mixin preview(html)
+  .preview!= html
+  code
+    pre= html
+
+mixin example(code)
+  .example
+    - if (code && code.description)
+      p= code.description
+      - if (code && code.code) { var codes = code.code }
+        each code in codes
+          +preview(code.html)
+    - else
+      +preview(code.html)
+
+mixin examples(examples)
+  - if (examples && examples !== {})
+    each code, type in examples
+      - if (type !== 'default')
+        .row
+          h5.title.is-5= type
+      .row
+        +example(code)
+
+mixin modifiers(modifiers)
+  - if (modifiers && modifiers !== {})
+    h4.title.is-4 Modifiers
+    .modifiers
+      table.table.is-bordered
+        thead
+        tbody
+          each mods, family in modifiers
+            tr
+              th(rowspan = mods.length + 1)= family
+            each mod in mods
+              tr
+                td
+                  code= mod
+
+mixin parents(parents)
+  - if (parents && parents.length)
+    .parents
+      h4.title.is-4 Parents
+      table.table.is-bordered
+        thead
+        tbody
+          tr
+            each parent in parents
+              tr
+                td
+                  code= parent
+
+mixin render(elem)
+  p= elem.desc
+  +example(elem.examples.default)
+  +modifiers(elem.modifiers)
+  - delete elem.examples.default
+  +examples(elem.examples)
+  +parents(elem.parents)
+
+doctype html
+html(lang= language)
+  meta(charset = 'utf-8')
+  meta(name = 'viewport', content = 'width=device-width, initial-scale=1')
+  title= name
+  link(rel = 'stylesheet', href = stylesheet)
+  link(rel = 'icon', href = 'https://bulma.io/favicons/favicon-32x32.png')
+  script(defer, src = 'https://use.fontawesome.com/releases/v5.1.0/js/all.js')
+  style.
+    * { scroll-behavior: smooth; }
+    pre { tab-size: 2; }
+    .example { padding: 2em 0; }
+  script.
+    // navbar mobile toggling
+    document.addEventListener('DOMContentLoaded', function () {
+      var burger = document.querySelector('#docnav .burger')
+      var menu = window[burger.dataset.target]
+      burger.addEventListener('click', function () {
+        burger.classList.toggle('is-active')
+        menu.classList.toggle('is-active')
+      })
+    })
+
+  body.has-navbar-fixed-top
+    section.hero.is-info.is-medium
+      .hero-head
+        nav#docnav.navbar.is-fixed-top.has-background-info
+          .container
+            .navbar-brand
+              a.navbar-item(href)
+                img(src = 'https://bulma.io/images/bulma-type-white.png', alt = 'Logo')
+              span.navbar-burger.burger(data-target = 'navMenuDoc')
+                span
+                span
+                span
+            #navMenuDoc.navbar-menu
+              .navbar-end
+                a.navbar-item.is-active(href = '#') Home
+                each category in categories
+                  a.navbar-item(href = '#' + category.name.toLowerCase())= category.name
+                span.navbar-item
+                  a.button.is-info.is-inverted(href = homepage, target = '_blank')
+                    .icon
+                      i.fab.fa-github
+                    span Download
+
+      .hero-body
+        .container.has-text-centered
+          h1.title= title
+          h2.subtitle= description
+
+      .hero-foot
+        .content.has-text-centered
+          p This documentation was generated with
+            a.button.is-link.is-outlined.is-inverted(href = 'https://www.npmjs.com/package/@codename/spec') spec
+
+    each category in categories
+      section.section
+        section.hero.is-primary.is-full-width(id = category.name.toLowerCase())
+          .hero-body
+            h1.title= category.name
+            h2.subtitle= category.desc
+        each elem in category.elements
+          section.hero.is-light
+            .hero-body
+              h1.title= elem.name
+              h2.subtitle= elem.desc
+              +render(elem)
