@@ -1,7 +1,7 @@
 mixin preview(html)
   .preview!= html
   code
-    pre= html
+    pre.microlight= html
 
 mixin example(code)
   .example
@@ -14,7 +14,7 @@ mixin example(code)
       +preview(code.html)
 
 mixin examples(examples)
-  - if (examples && examples !== {})
+  - if (Object.keys(examples).length)
     each code, type in examples
       - if (type !== 'default')
         .row
@@ -23,7 +23,7 @@ mixin examples(examples)
         +example(code)
 
 mixin modifiers(modifiers)
-  - if (modifiers && modifiers !== {})
+  - if (Object.keys(modifiers).length)
     h4.title.is-4 Modifiers
     .modifiers
       table.table.is-bordered
@@ -66,10 +66,12 @@ html(lang= language)
   link(rel = 'stylesheet', href = stylesheet)
   link(rel = 'icon', href = 'https://bulma.io/favicons/favicon-32x32.png')
   script(defer, src = 'https://use.fontawesome.com/releases/v5.1.0/js/all.js')
+  script(defer, src = 'https://unpkg.com/microlight')
   style.
-    * { scroll-behavior: smooth; }
-    pre { tab-size: 2; }
     .example { padding: 2em 0; }
+    .preview { margin: 1rem 0; }
+    code { display: flex; }
+    pre { tab-size: 2; border-radius: 6px; }
   script.
     // navbar mobile toggling
     document.addEventListener('DOMContentLoaded', function () {
@@ -124,5 +126,13 @@ html(lang= language)
           section.hero.is-light
             .hero-body
               h1.title= elem.name
-              h2.subtitle= elem.desc
-              +render(elem)
+              p.subtitle= elem.desc
+          +render(elem)
+    #typo.bd-typo
+      p.has-text-grey-light
+        a(href = 'https://bulma.io/made-with-bulma/')
+          img(src = 'https://bulma.io/images/made-with-bulma.png', alt = 'Made with Bulma', width = 128, height = 24)
+        br
+        = 'This page is'
+        strong.has-text-grey open source
+        = 'Noticed a typo? Or something unclear?'

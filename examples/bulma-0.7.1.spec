@@ -225,7 +225,7 @@ text weight:
 
   ### examples
 
-  default: .columns>.column{col1}+.column{col2}
+  default: .columns>(.column>.notification.is-primary{First column})+(.column>.notification.is-primary{Second column})+(.column>.notification.is-primary{Third column})+(.column>.notification.is-primary{Fourth column})
 
   gap:
   | If you want to remove the space between the columns, add the is-gapless modifier on the columns container.
@@ -254,7 +254,7 @@ text weight:
 
   ### examples
 
-  default: .column{column}
+  default: .columns>(.column>.notification.is-primary{Column})
 
   ### modifiers
 
@@ -269,7 +269,7 @@ text weight:
   - is-three-fifths
   - is-two-fifths
   - is-one-fifth
-  - .is-$@2*12
+  - is-$@2*12
   - is-narrow
   - is-narrow-mobile
   - is-narrow-tablet
@@ -799,10 +799,6 @@ text weight:
 
   default: .card>(header.card-header>p.card-header-title{title})+(.card-image>figure.image)+(.card-content>p{content})+(footer.card-footer>.card-footer-item)
 
-  ### modifiers
-
-  > TODO:
-
   ## Tabs
 
   desc: Simple responsive horizontal navigation tabs, with different styles
@@ -811,7 +807,7 @@ text weight:
 
   ### examples
 
-  default: .tabs>ul>li.is-active>a{Pictures}^^li>a{Music}^^li>a{Documents}
+  default: .tabs>ul>li.is-active>a{Pictures}^li>a{Music}^li>a{Documents}
 
   alignment:
   | To align the tabs list, use the is-centered or is-right modifier on the .tabs container.
