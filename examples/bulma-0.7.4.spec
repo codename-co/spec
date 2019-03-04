@@ -26,6 +26,11 @@ size helpers:
 - is-medium
 - is-large
 
+group size helpers:
+- are-small
+- are-medium
+- are-large
+
 float:
 - is-clearfix
 - is-pulled-left
@@ -408,7 +413,6 @@ text weight:
   - is-medium
   - is-large
   - is-fullheight
-  - is-fullheight-with-navbar
 
   ## Section
 
@@ -512,7 +516,7 @@ text weight:
   - is-black
   - is-text
 
-  sizes < size helpers
+  sizes < group size helpers
 
   outlined:
   - is-outlined
@@ -769,10 +773,7 @@ text weight:
 
   ### modifiers
 
-  sizing:
-  - are-large
-  - are-medium
-  - are-small
+  sizing < group size helpers
 
   addons:
   - has-addons
