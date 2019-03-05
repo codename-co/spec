@@ -413,6 +413,7 @@ text weight:
   - is-medium
   - is-large
   - is-fullheight
+  - is-fullheight-with-navbar
 
   ## Section
 
