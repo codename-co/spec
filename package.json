@@ -33,7 +33,7 @@
     "@emmetio/html-transform": "^0.3.10",
     "commander": "^2.19.0",
     "eminent": "^0.0.8",
-    "enojs": "^0.16.1",
+    "enolib": "^0.8.2",
     "loglevel": "^1.6.1",
     "mkdirp": "^0.5.1",
     "pug": "^2.0.3"
