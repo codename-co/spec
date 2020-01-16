@@ -233,14 +233,14 @@ text weight:
   default: .columns>(.column>.notification.is-primary{First column})+(.column>.notification.is-primary{Second column})+(.column>.notification.is-primary{Third column})+(.column>.notification.is-primary{Fourth column})
 
   gap:
-  | If you want to remove the space between the columns, add the is-gapless modifier on the columns container.
+  \ If you want to remove the space between the columns, add the is-gapless modifier on the columns container.
 
   multi:
-  | You can combine it with the is-multiline modifier.
+  \ You can combine it with the is-multiline modifier.
 
   alignment:
-  | While you can use empty columns (like <div class="column"></div>) to create horizontal space around .column elements,
-  | you can also use .is-centered on the parent .columns element.
+  \ While you can use empty columns (like <div class="column"></div>) to create horizontal space around .column elements,
+  \ you can also use .is-centered on the parent .columns element.
 
   ### modifiers
 
@@ -321,13 +321,13 @@ text weight:
   default: .container>.notification{Container content.}
 
   fluid:
-  | If you don't want to have a maximum width but want to keep the 32px margin on the left and right sides, add the is-fluid modifier.
+  \ If you don't want to have a maximum width but want to keep the 32px margin on the left and right sides, add the is-fluid modifier.
 
   responsive:
-  | With the two modifiers .is-widescreen and .is-fullhd, you can have a fullwidth container until those specific breakpoints.
+  \ With the two modifiers .is-widescreen and .is-fullhd, you can have a fullwidth container until those specific breakpoints.
 
   style:
-  | If you don't want to see an arrow on on the side of the navbar, add the is-arrowless modifier.
+  \ If you don't want to see an arrow on on the side of the navbar, add the is-arrowless modifier.
 
   ### modifiers
 
@@ -356,8 +356,8 @@ text weight:
   default: nav.level>.level-left>.level-item>p.subtitle.is-5>strong{123}^posts^^.level-item>.field.has-addons>p.control>input.input[placeholder={Find a post}]^p.control>button.button{Search}
 
   responsive:
-  | By default, for space concerns, the level is vertical on mobile. If you want the level to be horizontal on mobile as well,
-  | add the is-mobile modifier on the level container.
+  \ By default, for space concerns, the level is vertical on mobile. If you want the level to be horizontal on mobile as well,
+  \ add the is-mobile modifier on the level container.
 
   ### modifiers
 
@@ -387,13 +387,13 @@ text weight:
   default: section.hero.is-primary>.hero-body>.container>h1.title{Hero title}+h2.subtitle{Hero subtitle}
 
   colors:
-  | As with buttons, you can choose one of the 7 different colors.
+  \ As with buttons, you can choose one of the 7 different colors.
 
   gradients:
-  | By adding the is-bold modifier, you can generate a subtle gradient.
+  \ By adding the is-bold modifier, you can generate a subtle gradient.
 
   sizes:
-  | You can have even more imposing banners by using one of 3 different sizes.
+  \ You can have even more imposing banners by using one of 3 different sizes.
 
   ### modifiers
 
@@ -490,22 +490,22 @@ text weight:
   default: a.button{Button}
 
   colors:
-  | Colored buttons.
+  \ Colored buttons.
 
   sizes:
-  | Size matters.
+  \ Size matters.
 
   outlined:
-  | Outlined.
+  \ Outlined.
 
   inverted:
-  | Inverted.
+  \ Inverted.
 
   rounded:
-  | Rounded.
+  \ Rounded.
 
   loading:
-  | Loading
+  \ Loading
 
   ### modifiers
 
@@ -554,7 +554,7 @@ text weight:
   default: .content>ol>li{Coffee}+li{Tea}+li{Milk}
 
   sizes:
-  | You can use the is-small, is-medium and is-large modifiers to change the font size.
+  \ You can use the is-small, is-medium and is-large modifiers to change the font size.
 
   ### modifiers
 
@@ -576,7 +576,7 @@ text weight:
   default: a.delete
 
   sizes:
-  | It comes in 4 sizes.
+  \ It comes in 4 sizes.
 
   ### modifiers
 
@@ -591,10 +591,10 @@ text weight:
   default: span.icon>i.fas.fa-home
 
   colors:
-  | Since icon fonts are simply text, you can use the text color modifiers to change the icon's color.
+  \ Since icon fonts are simply text, you can use the text color modifiers to change the icon's color.
 
   sizes:
-  | Size matters.
+  \ Size matters.
 
   ### modifiers
 
@@ -611,10 +611,10 @@ text weight:
   default: figure.image>img[src=https://bulma.io/images/placeholders/128x128.png]
 
   ratio:
-  | There are 7 dimensions to choose from, useful for avatars.
+  \ There are 7 dimensions to choose from, useful for avatars.
 
   rounded:
-  | You can also make rounded images, using .is-rounded class.
+  \ You can also make rounded images, using .is-rounded class.
 
   ### modifiers
 
@@ -650,7 +650,7 @@ text weight:
   default: .notification>button.delete+{Lorem ipsum dolor sit amet.}
 
   colors:
-  | Colored notifications.
+  \ Colored notifications.
 
   ### modifiers
 
@@ -667,10 +667,10 @@ text weight:
   default: progress.progress
 
   colors:
-  | Colored progress bars.
+  \ Colored progress bars.
 
   sizes:
-  | Size matters.
+  \ Size matters.
 
   ### modifiers
 
@@ -688,19 +688,19 @@ text weight:
   default: table.table>thead>tr>th{Pos}+th{Pts}^^tfoot>tr>th{Pos}+th{Pts}^^tbody>tr>th{1}+td{Leicester City}+td{81}
 
   bordered:
-  | Add borders to all the cells.
+  \ Add borders to all the cells.
 
   striped:
-  | Add stripes to the table.
+  \ Add stripes to the table.
 
   narrow:
-  | Make the cells narrower.
+  \ Make the cells narrower.
 
   hoverable:
-  | You can add a hover effect on each row.
+  \ You can add a hover effect on each row.
 
   fullwidth:
-  | You can have a fullwidth table.
+  \ You can have a fullwidth table.
 
   ### modifiers
 
@@ -732,16 +732,16 @@ text weight:
   default: span.tag{Tag label}
 
   colors:
-  | Like with buttons, there are 10 different colors available.
+  \ Like with buttons, there are 10 different colors available.
 
   sizes:
-  | And 2 additional sizes.
+  \ And 2 additional sizes.
 
   rounded:
-  | You can add the is-rounded modifier to make a rounded tag.
+  \ You can add the is-rounded modifier to make a rounded tag.
 
   delete:
-  | You can add the is-delete modifier to turn the tag into a delete button.
+  \ You can add the is-delete modifier to turn the tag into a delete button.
 
   ### modifiers
 
@@ -793,7 +793,7 @@ text weight:
   default: h1.title{Title}
 
   spaced:
-  | You can maintain the normal spacing between titles and subtitles if you use the is-spaced modifier on the first element.
+  \ You can maintain the normal spacing between titles and subtitles if you use the is-spaced modifier on the first element.
 
   ### modifiers
 
@@ -824,13 +824,13 @@ text weight:
   default: .tabs>ul>li.is-active>a{Pictures}^li>a{Music}^li>a{Documents}
 
   alignment:
-  | To align the tabs list, use the is-centered or is-right modifier on the .tabs container.
+  \ To align the tabs list, use the is-centered or is-right modifier on the .tabs container.
 
   sizes:
-  | You can choose between 3 additional sizes ; is-small is-medium and is-large.
+  \ You can choose between 3 additional sizes ; is-small is-medium and is-large.
 
   styles:
-  | Stylised tabs.
+  \ Stylised tabs.
 
   ### modifiers
 
