@@ -16,6 +16,7 @@ cli
   .description('generate a spec documentation')
   .action((specFile, cmd) => {
     const { template } = cmd
+    console.log("test")
     generateDoc(specFile, { template })
   })
 
